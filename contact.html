@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — ALO Coaching & Formation</title>
+  <meta name="description" content="Contactez ALO Coaching & Formation pour vos besoins en formation et coaching en gestion de projets IT.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- ======= NAVIGATION ======= -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">AL</div>
+        <div class="logo-text">ALO <span>Coaching</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="coaching.html">Coaching</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html" class="nav-cta active">Contact</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======= PAGE HEADER ======= -->
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a> / <span>Contact</span>
+      </div>
+      <h1>Contactez-moi</h1>
+      <p>Échangeons sur vos besoins en formation ou coaching. Premier échange sans engagement.</p>
+    </div>
+  </div>
+
+  <!-- ======= CONTACT ======= -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info fade-in">
+          <h3>Parlons de votre projet</h3>
+          <p style="color:var(--text-light);margin-bottom:2rem">Que vous cherchiez une formation pour vos équipes ou un coaching individuel, je suis à votre écoute pour construire la solution adaptée à vos enjeux.</p>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail">
+              <h4>Téléphone</h4>
+              <p><a href="tel:+33680923259" style="color:var(--navy)">06 80 92 32 59</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-detail">
+              <h4>Email</h4>
+              <p><a href="mailto:arnaud.loyet@yahoo.fr" style="color:var(--navy)">arnaud.loyet@yahoo.fr</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <h4>Localisation</h4>
+              <p>Lannion / Rennes — Bretagne</p>
+              <p style="font-size:0.85rem;color:var(--text-light)">Interventions France entière et à distance</p>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200)">
+            <h4 style="font-family:'Inter',sans-serif;margin-bottom:0.5rem">💡 Premier échange gratuit</h4>
+            <p style="font-size:0.9rem;color:var(--text-light)">30 minutes pour comprendre vos besoins et vous proposer l'accompagnement le plus adapté. Sans engagement.</p>
+          </div>
+        </div>
+
+        <div class="contact-form fade-in">
+          <h3 id="form-title">Envoyez-moi un message</h3>
+          <div id="form-success" style="display:none;text-align:center;padding:3rem 1rem">
+            <div style="font-size:4rem;margin-bottom:1rem">✅</div>
+            <h3 style="margin-bottom:0.5rem">Message envoyé !</h3>
+            <p style="color:var(--text-light)">Merci pour votre message. Je reviens vers vous dans les plus brefs délais.</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top:1.5rem">Retour à l'accueil →</a>
+          </div>
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <!-- Netlify spam protection -->
+            <p style="display:none">
+              <label>Ne remplissez pas ce champ : <input name="bot-field"></label>
+            </p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+              </div>
+              <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="entreprise">Entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
+            </div>
+
+            <div class="form-group">
+              <label for="sujet">Sujet</label>
+              <select id="sujet" name="sujet" required>
+                <option value="">Sélectionnez un sujet</option>
+                <option value="formation-cp">Formation Chef de Projet</option>
+                <option value="formation-dp">Formation Directeur de Projet</option>
+                <option value="formation-finance">Formation Pilotage Financier</option>
+                <option value="formation-management">Formation Management d'Équipe</option>
+                <option value="formation-interculturel">Formation Management Interculturel</option>
+                <option value="coaching-individuel">Coaching Individuel</option>
+                <option value="coaching-collectif">Coaching Collectif</option>
+                <option value="formation-sur-mesure">Formation Sur Mesure</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" required placeholder="Décrivez vos besoins : contexte, nombre de participants, dates souhaitées..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Envoyer le message →</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo-text">ALO <span>Coaching & Formation</span></div>
+        <p>Formations et coaching en gestion de projets IT, direction de programmes et management d'équipes. 30 ans d'expérience terrain.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="formations.html">Formations</a>
+          <a href="coaching.html">Coaching</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="tel:+33680923259">06 80 92 32 59</a>
+          <a href="mailto:arnaud.loyet@yahoo.fr">arnaud.loyet@yahoo.fr</a>
+          <a>Lannion / Rennes, Bretagne</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ALO Coaching & Formation. Tous droits réservés.</p>
+      <p>Arnaud Loyet — Formateur senior en gestion de projets IT</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var params = new URLSearchParams();
+      params.append('form-name', 'contact');
+      var inputs = form.querySelectorAll('input, textarea, select');
+      inputs.forEach(function(input) {
+        if (input.name && input.type !== 'hidden' && input.type !== 'submit') {
+          params.append(input.name, input.value);
+        }
+      });
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString()
+      }).then(function(response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('form-title').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          alert('Erreur lors de l\'envoi. Veuillez réessayer ou me contacter au 06 80 92 32 59.');
+        }
+      }).catch(function() {
+        alert('Erreur lors de l\'envoi. Veuillez réessayer ou me contacter au 06 80 92 32 59.');
+      });
+    });
+  </script>
+</body>
+</html>

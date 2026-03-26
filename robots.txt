@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aloformationcoaching.netlify.app/sitemap.xml
+
+Disallow: /merci.html
