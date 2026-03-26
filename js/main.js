@@ -102,16 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 16);
     };
 
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => counterObserver.observe(counter));
+    // Animate counters immediately on load (no delay for hero section)
+    counters.forEach(counter => {
+      // Start animation after a small delay to ensure page is rendered
+      setTimeout(() => animateCounter(counter), 100);
+    });
   }
 
 });
