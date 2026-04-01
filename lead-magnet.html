@@ -170,6 +170,7 @@
               class="lead-magnet-form" 
               name="lead-magnet" 
               method="POST" 
+              action="/merci.html"
               data-netlify="true"
               netlify-honeypot="bot-field">
               
@@ -317,13 +318,39 @@
 
     if (leadMagnetForm) {
       leadMagnetForm.addEventListener('submit', function(e) {
-        // Laisser Netlify traiter le formulaire
-        // Après 2 secondes, afficher le message de succès
-        setTimeout(function() {
-          leadMagnetForm.style.display = 'none';
-          leadFormTitle.style.display = 'none';
-          leadFormSuccess.style.display = 'block';
-        }, 1500);
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.textContent = 'Envoi en cours...'; btn.disabled = true; }
+        var params = new URLSearchParams();
+        params.append('form-name', 'lead-magnet');
+        var inputs = form.querySelectorAll('input, textarea, select');
+        inputs.forEach(function(input) {
+          if (input.name && input.type !== 'hidden' && input.type !== 'submit') {
+            if (input.type === 'checkbox') {
+              if (input.checked) params.append(input.name, input.value);
+            } else {
+              params.append(input.name, input.value);
+            }
+          }
+        });
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        }).then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            if (leadFormTitle) leadFormTitle.style.display = 'none';
+            leadFormSuccess.style.display = 'block';
+          } else {
+            alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+            if (btn) { btn.textContent = '📥 Télécharger le PDF gratuit'; btn.disabled = false; }
+          }
+        }).catch(function() {
+          alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+          if (btn) { btn.textContent = '📥 Télécharger le PDF gratuit'; btn.disabled = false; }
+        });
       });
     }
   </script>
